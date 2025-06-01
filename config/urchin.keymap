@@ -42,36 +42,45 @@
             bindings = <&kp>, <&kp>;
         };
 
-        hmr: hmr {
+        modsRight: modsRight {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
+            label = "MODSRIGHT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 33>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32>;
             hold-trigger-on-release;
         };
 
-        hml: hml {
+        modsLeft: modsLeft {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
+            label = "MODSLEFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33 30>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 31>;
             hold-trigger-on-release;
         };
 
-        morph_num_func: morph_num_func {
+        morph_numFunc_alt: morph_numFunc_alt {
             compatible = "zmk,behavior-mod-morph";
-            label = "MORPH_NUM_FUNC";
+            label = "MORPH_NUMFUNC_ALT";
             bindings = <&mo 1>, <&mo 2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        morph_symNav_alt: morph_symNav_alt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_SYMNAV_ALT";
+            bindings = <&mo 3>, <&mo 4>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -100,23 +109,23 @@
         // hold control & space for Adobe workflow
 
         combo_fw {
-            bindings = <&sl 4>;
+            bindings = <&sl 5>;
             key-positions = <0 24>;
         };
 
         combo_enter_r {
             bindings = <&kp ENTER>;
-            key-positions = <16 17 18>;
+            key-positions = <27 28>;
         };
 
         combo_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <6 7>;
+            key-positions = <7 6>;
         };
 
         combo_delete {
             bindings = <&kp DEL>;
-            key-positions = <8 7>;
+            key-positions = <7 8>;
         };
 
         combo_tab {
@@ -126,7 +135,7 @@
 
         combo_enter_left {
             bindings = <&kp ENTER>;
-            key-positions = <13 12 11>;
+            key-positions = <22 21>;
         };
 
         combo_esc {
@@ -143,32 +152,32 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q            &kp W         &kp F          &kp P            &kp B      &kp J      &kp L        &kp U          &kp Y             &kp RA(W)
-&hml LEFT_ALT A  &hml LCTRL R  &hml LSHIFT S  &hml LGUI T      &kp G      &kp M      &hmr RGUI N  &hmr RSHIFT E  &hmr RCTRL RA(O)  &hmr RALT RA(A)
-&kp Z            &kp X         &kp C          &kp D            &kp V      &kp K      &kp H        &kp O          &kp I             &kp APOS
-                                              &morph_num_func  &kp SPACE  &kp SPACE  &mo 3
+&kp Q                 &kp W              &kp F               &kp P               &kp B      &kp J      &kp L              &kp U                &kp Y                   &kp RA(W)
+&modsLeft LEFT_ALT A  &modsLeft LCTRL R  &modsLeft LSHIFT S  &modsLeft LGUI T    &kp G      &kp M      &modsRight RGUI N  &modsRight RSHIFT E  &modsRight RCTRL RA(O)  &modsRight RALT RA(A)
+&kp Z                 &kp X              &kp C               &kp D               &kp V      &kp K      &kp H              &kp O                &kp I                   &kp APOS
+                                                             &morph_numFunc_alt  &kp SPACE  &kp SPACE  &morph_symNav_alt
             >;
         };
 
-        num {
+        numFunc {
             bindings = <
-&trans  &trans  &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mt EXCL N1  &mt AT N2     &mt HASH N3   &trans  &trans  &trans  &trans  &trans
-                             &trans        &mt RPAR N0   &trans  &trans
+&trans  &trans       &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans  &trans  &trans  &trans  &trans
+&trans  &mt RPAR N0  &mt EXCL N1  &mt AT N2     &mt HASH N3   &trans  &trans  &trans  &trans  &trans
+                                  &trans        &trans        &trans  &trans
             >;
         };
 
-        func {
+        numFunc_alt {
             bindings = <
-&trans  &trans  &kp F7      &kp F8      &kp F9   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp F4      &kp F5      &kp F6   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mt F11 F1  &mt F12 F2  &kp F3   &trans  &trans  &trans  &trans  &trans
-                            &trans      &kp F10  &trans  &trans
+&trans  &trans   &kp F7      &kp F8      &kp F9  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &kp F4      &kp F5      &kp F6  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F10  &mt F11 F1  &mt F12 F2  &kp F3  &trans  &trans  &trans  &trans  &trans
+                             &trans      &trans  &trans  &trans
             >;
         };
 
-        sym_nav {
+        symNav {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &mt UNDER MINUS  &mt LBRC LBKT  &mt RBRC RBKT  &kp LPAR        &kp RPAR
 &trans  &trans  &trans  &trans  &trans  &mt COLON SEMI   &kp LEFT       &kp DOWN       &kp UP          &kp RIGHT
@@ -177,13 +186,31 @@
             >;
         };
 
+        symNav_alt {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans
+                        &trans  &trans  &trans  &trans
+            >;
+        };
+
         fw {
             bindings = <
-&trans       &trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR   &trans  &bt BT_SEL 4  &trans        &trans        &trans  &trans  &trans  &trans  &bt BT_CLR
-&bootloader  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &trans  &bootloader
-                                   &trans        &bt BT_SEL 0  &trans  &trans
+&none        &none         &none         &none         &none         &none  &none  &none  &none  &none
+&bt BT_CLR   &none         &bt BT_SEL 4  &none         &none         &none  &none  &none  &none  &bt BT_CLR
+&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &none  &none  &bootloader
+                                         &to 0         &none         &none  &to 0
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        symNav_alt {
+            if-layers = <4>;
+            then-layer = <3>;
         };
     };
 };
