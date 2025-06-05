@@ -154,10 +154,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q                 &kp W              &kp F               &kp P               &kp B      &kp J      &kp L              &kp U                &kp Y                   &kp RA(W)
-&modsLeft LEFT_ALT A  &modsLeft LCTRL R  &modsLeft LSHIFT S  &modsLeft LGUI T    &kp G      &kp M      &modsRight RGUI N  &modsRight RSHIFT E  &modsRight RCTRL RA(O)  &modsRight RALT RA(A)
-&kp Z                 &kp X              &kp C               &kp D               &kp V      &kp K      &kp H              &kp O                &kp I                   &kp APOS
-                                                             &morph_numFunc_alt  &kp SPACE  &kp SPACE  &morph_symNav_alt
+&kp Q              &kp W              &kp F  &kp P               &kp B      &kp J      &kp L              &kp U  &kp Y                   &kp RA(W)
+&modsLeft LSHFT A  &modsLeft LCTRL R  &kp S  &modsLeft LGUI T    &kp G      &kp M      &modsRight RGUI N  &kp E  &modsRight RCTRL RA(O)  &modsRight RSHIFT RA(A)
+&kp Z              &kp X              &kp C  &kp D               &kp V      &kp K      &kp H              &kp O  &kp I                   &kp APOS
+                                             &morph_numFunc_alt  &kp SPACE  &kp SPACE  &morph_symNav_alt
             >;
         };
 
