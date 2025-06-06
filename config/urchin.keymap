@@ -154,28 +154,28 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q              &kp W              &kp F  &kp P               &kp B      &kp J      &kp L              &kp U  &kp Y                   &kp RA(W)
-&modsLeft LSHFT A  &modsLeft LCTRL R  &kp S  &modsLeft LGUI T    &kp G      &kp M      &modsRight RGUI N  &kp E  &modsRight RCTRL RA(O)  &modsRight RSHIFT RA(A)
-&kp Z              &kp X              &kp C  &kp D               &kp V      &kp K      &kp H              &kp O  &kp I                   &kp APOS
-                                             &morph_numFunc_alt  &kp SPACE  &kp SPACE  &morph_symNav_alt
+&kp Q              &kp W  &kp F  &kp P               &kp B      &kp J      &kp L              &kp U  &kp Y      &kp RA(W)
+&modsLeft LSHFT A  &kp R  &kp S  &modsLeft LGUI T    &kp G      &kp M      &modsRight RGUI N  &kp E  &kp RA(O)  &modsRight RSHIFT RA(A)
+&modsLeft LCTRL Z  &kp X  &kp C  &kp D               &kp V      &kp K      &kp H              &kp O  &kp I      &modsRight RCTRL APOS
+                                 &morph_numFunc_alt  &kp SPACE  &kp SPACE  &morph_symNav_alt
             >;
         };
 
         numFunc {
             bindings = <
-&trans  &trans       &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &trans  &trans  &trans  &trans  &trans
-&trans  &trans       &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans  &trans  &trans  &trans  &trans
-&trans  &mt RPAR N0  &mt EXCL N1  &mt AT N2     &mt HASH N3   &trans  &trans  &trans  &trans  &trans
-                                  &trans        &trans        &trans  &trans
+&trans  &mt AMPS N7  &mt STAR N8   &mt LPAR N9   &mt RPAR N0  &trans  &trans  &trans  &trans  &trans
+&trans  &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &mt EXCL N1  &mt AT N2     &mt HASH N3   &trans       &trans  &trans  &trans  &trans  &trans
+                                   &trans        &trans       &trans  &trans
             >;
         };
 
         numFunc_alt {
             bindings = <
-&trans  &trans   &kp F7      &kp F8      &kp F9  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &kp F4      &kp F5      &kp F6  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F10  &mt F11 F1  &mt F12 F2  &kp F3  &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans  &trans  &trans
+&trans  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans   &trans  &trans
             >;
         };
 
@@ -199,10 +199,10 @@
 
         fw {
             bindings = <
-&none        &none         &none         &none         &none         &none  &none  &none  &none  &none
-&bt BT_CLR   &none         &bt BT_SEL 4  &none         &none         &none  &none  &none  &none  &bt BT_CLR
-&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none  &none  &none  &none  &bootloader
-                                         &to 0         &none         &none  &to 0
+&none        &none         &none         &none         &bt BT_CLR  &bt BT_CLR  &none  &none  &none  &none
+&none        &bt BT_SEL 3  &bt BT_SEL 4  &none         &none       &none       &none  &none  &none  &none
+&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       &none       &none  &none  &none  &bootloader
+                                         &to 0         &none       &none       &to 0
             >;
         };
     };
