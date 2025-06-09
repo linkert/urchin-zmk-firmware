@@ -163,10 +163,10 @@
 
         base {
             bindings = <
-&kp Q               &kp W             &kp F  &kp P           &kp B                 &kp J                    &kp L          &kp U  &kp Y              &kp RA(W)
-&modsLeft LSHIFT A  &kp R             &kp S  &kp T           &kp G                 &kp M                    &kp N          &kp E  &kp RA(O)          &modsRight RA(RSHIFT) RA(A)
-&modsLeft LCTRL Z   &modsLeft LALT X  &kp C  &kp D           &kp V                 &kp K                    &kp H          &kp O  &modsRight RALT I  &modsRight RCTRL SQT
-                                             &morph_numFunc  &modsLeft LGUI SPACE  &modsRight RSHIFT SPACE  &morph_symNav
+&kp Q               &kp W             &kp F             &kp P           &kp B                 &kp J                    &kp L          &kp U              &kp Y              &kp RA(W)
+&modsLeft LSHIFT A  &kp R             &modsLeft LGUI S  &kp T           &kp G                 &kp M                    &kp N          &modsRight RGUI E  &kp RA(O)          &modsRight RA(RSHIFT) RA(A)
+&modsLeft LCTRL Z   &modsLeft LALT X  &kp C             &kp D           &kp V                 &kp K                    &kp H          &kp O              &modsRight RALT I  &modsRight RCTRL SQT
+                                                        &morph_numFunc  &modsLeft LGUI SPACE  &modsRight RSHIFT SPACE  &morph_symNav
             >;
         };
 
