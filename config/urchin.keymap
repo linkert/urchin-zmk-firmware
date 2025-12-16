@@ -218,7 +218,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BACKSLASHPIPE";
             #binding-cells = <0>;
-            bindings = <&kp SE_BSLH>, <&kp SE_PIPE>;
+            bindings = <&kp RA(SE_PLUS)>, <&kp SE_PIPE>;
 
             tapping-term-ms = <250>;
         };
